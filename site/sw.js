@@ -1,5 +1,5 @@
-// ExSE Regen – Service Worker: App-Hülle offline verfügbar, Radardaten und Karten immer direkt aus dem Netz
-const C = 'regen-v4', SHELL = ['./', './index.html', './app.js', './vendor/maplibre-gl.mjs', './vendor/maplibre-gl-worker.mjs', './vendor/maplibre-gl.css', './fonts/marcellus-exse-regen.woff2', './favicon-32.png', './icons/icon-v2-192.png'];
+// ExplorationSE Regen – Service Worker: App-Hülle offline verfügbar, Radardaten und Karten immer direkt aus dem Netz
+const C = 'regen-v5', SHELL = ['./', './index.html', './app.js', './vendor/maplibre-gl.mjs', './vendor/maplibre-gl-worker.mjs', './vendor/maplibre-gl.css', './fonts/explorationse-regen.woff2', './icons/favicon-v3-32.png', './icons/icon-v3-192.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(C).then(c => c.addAll(SHELL))); self.skipWaiting(); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(k => Promise.all(k.filter(x => x !== C).map(x => caches.delete(x))))); self.clients.claim(); });
 self.addEventListener('fetch', e => {

@@ -1,5 +1,6 @@
-# ExSE Regen
+# ExplorationSE Regen
 
+**Aktuelle Version:** 0.3 (19.10.2026) – siehe [CHANGELOG.md](CHANGELOG.md)  
 **Live:** https://explorationse.github.io/exse-regen/
 
 Regenradar als Web-App (PWA) für das Android-Handy (Chrome): aktuelle Regenkarte, zentriert auf den eigenen Standort, mit Animation der letzten 2 Stunden und Vorhersage für die nächsten 2 Stunden.
@@ -13,6 +14,7 @@ Regenradar als Web-App (PWA) für das Android-Handy (Chrome): aktuelle Regenkart
 - Legende in mm/h (Farbstufen des DWD)
 - Außerhalb des DWD-Gebiets oder bei DWD-Ausfall: RainViewer (nur Vergangenheit, ohne Vorhersage)
 - Seite scrollt nicht (getestet 360×800 und 412×915)
+- Fußzeile „ExplorationSE Regen · Quelle: Deutscher Wetterdienst · Version …“, Name in der Schrift Marcellus wie im App-Symbol „S.E.“, ab 360 px einzeilig
 
 ## Datenquellen und Lizenzen
 | Quelle | Verwendung | Bedingungen |
@@ -21,7 +23,7 @@ Regenradar als Web-App (PWA) für das Android-Handy (Chrome): aktuelle Regenkart
 | OpenFreeMap „Dark“ (`tiles.openfreemap.org`) | Grundkarte (Vektorkacheln) | frei, ohne Schlüssel; Nennung „OpenFreeMap © OpenMapTiles Data from OpenStreetMap“ (unten rechts auf der Karte) |
 | RainViewer (`api.rainviewer.com/public/weather-maps.json`) | Ausweichquelle außerhalb Deutschlands | nur private/Bildungsnutzung, max. Zoom 7, 100 Anfragen/min je IP, keine Vorhersage (seit 01.01.2026); Nennung mit Link |
 | MapLibre GL JS 6.13.0 | Kartendarstellung | BSD-3-Clause, `site/vendor/MAPLIBRE-LICENSE.txt` |
-| Marcellus (Teilmenge „ExSE Regen“) | Name in der Fußzeile | SIL OFL 1.1, `site/fonts/` |
+| Marcellus (Teilmenge „ExplorationSE Regen“) | Name in der Fußzeile | SIL OFL 1.1, `site/fonts/` |
 
 Hinweis: Die früher übliche CARTO-Grundkarte (`basemaps.cartocdn.com`) liefert seit 25.09.2026 ohne API-Schlüssel nur noch den Hinweis „API KEY REQUIRED“ und wird deshalb nicht verwendet.
 
@@ -35,11 +37,11 @@ Hinweis: Die früher übliche CARTO-Grundkarte (`basemaps.cartocdn.com`) liefert
 ```
 site/            # statische Web-App (wird auf GitHub Pages veröffentlicht)
   index.html, app.js, sw.js, manifest.webmanifest
-  icons/         # PNG-Symbole (Dateinamen -v2-) 48–512 px, separate maskable-Symbole, Apple-Touch-Icon
+  icons/         # PNG-Symbole (Dateinamen -v3-) 48–512 px, separate maskable-Symbole, Apple-Touch-Icon, Favicons
   fonts/         # Marcellus-Teilmenge (OFL)
   vendor/        # MapLibre GL JS (selbst gehostet)
 tools/
-  make-icon.py   # erzeugt site/icon.svg (Schrift als Pfade)
+  make-icon.py   # erzeugt site/icon.svg (Schriftzug „S.E.“ als Pfade)
   render-icons.js# rendert die PNG-Symbole und icon-preview.png
   shot.js        # Test in Headless-Chromium mit simuliertem Standort
 ```
@@ -51,10 +53,12 @@ node tools/shot.js 412 915 screenshot.png 52.52 13.405 more
 ```
 
 ## Installation auf dem Handy
-In Chrome https://explorationse.github.io/exse-regen/ öffnen, Standort erlauben, dann Menü ⋮ → „Zum Startbildschirm hinzufügen“ bzw. „App installieren“.
+In Chrome https://explorationse.github.io/exse-regen/ öffnen, Standort erlauben, dann Menü ⋮ → „Zum Startbildschirm hinzufügen“ bzw. „App installieren“. Auf dem Startbildschirm heißt die App „SE Regen“ (voller Name „ExplorationSE Regen“ in der App-Übersicht).
+
+**Hinweis zu Version 0.3:** Mit 0.3 haben sich Name („ExplorationSE Regen“ statt „ExSE Regen“) und Symbol („S.E.“) geändert. Zeigt der Startbildschirm noch den alten Namen oder das alte Symbol, die App entfernen und über Chrome neu installieren. Adresse und gespeicherter Standort bleiben erhalten.
 
 ## Veröffentlichung
 GitHub Pages über den Workflow `.github/workflows/pages.yml` (veröffentlicht den Ordner `site/` bei jedem Push auf `main`).
 
 ## Hinweis zur Installation (Manifest)
-`id`, `start_url` und `scope` sind absolut auf `/exse-regen/` gesetzt. Beide ExSE-Apps liegen auf demselben Ursprung `explorationse.github.io`; eine relative `id` („./“) wird laut Spezifikation relativ zum Ursprung aufgelöst und ergab `https://explorationse.github.io/` – das ist keine eindeutige App-Kennung und hat in Version 0.1/0.2 die Installation auf Android verhindert.
+`id`, `start_url` und `scope` sind absolut auf `/exse-regen/` gesetzt. Beide Apps (ExplorationSE Aktien und ExplorationSE Regen) liegen auf demselben Ursprung `explorationse.github.io`; eine relative `id` („./“) wird laut Spezifikation relativ zum Ursprung aufgelöst und ergab `https://explorationse.github.io/` – das ist keine eindeutige App-Kennung und hat in Version 0.1/0.2 die Installation auf Android verhindert.

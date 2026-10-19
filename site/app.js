@@ -1,4 +1,4 @@
-// ExSE Regen – Regenradar mit Vorhersage, zentriert auf den Standort
+// ExplorationSE Regen – Regenradar mit Vorhersage, zentriert auf den Standort
 // Daten: Deutscher Wetterdienst (WMS-Layer dwd:Niederschlagsradar, RV-Produkt 1 km, 5-minütig, Analyse + Vorhersage bis +2 h)
 // Ausweichquelle außerhalb des DWD-Gebiets: RainViewer (nur Vergangenheit, max. Zoom 7)
 import * as maplibregl from './vendor/maplibre-gl.mjs';

@@ -1,6 +1,6 @@
 # Hinweise zu Fremdbestandteilen
 
-Der eigene Code von ExSE Regen steht unter der MIT-Lizenz (siehe [LICENSE](LICENSE)). Die folgenden Bestandteile stammen von Dritten und unterliegen ihren eigenen Lizenzen bzw. Nutzungsbedingungen. Es werden keine Bibliotheken über ein CDN nachgeladen; MapLibre liegt lokal in `site/vendor/`. Kartenstil, Kacheln und Radardaten werden zur Laufzeit von den unten genannten Diensten geladen.
+Der eigene Code von ExplorationSE Regen steht unter der MIT-Lizenz (siehe [LICENSE](LICENSE)). Die folgenden Bestandteile stammen von Dritten und unterliegen ihren eigenen Lizenzen bzw. Nutzungsbedingungen. Es werden keine Bibliotheken über ein CDN nachgeladen; MapLibre liegt lokal in `site/vendor/`. Kartenstil, Kacheln und Radardaten werden zur Laufzeit von den unten genannten Diensten geladen.
 
 ## Mitgelieferte Software und Schriften
 
@@ -8,7 +8,7 @@ Der eigene Code von ExSE Regen steht unter der MIT-Lizenz (siehe [LICENSE](LICEN
 |---|---|---|---|
 | MapLibre GL JS 6.13.0, © 2023 MapLibre contributors | `site/vendor/maplibre-gl.mjs`, `maplibre-gl-worker.mjs`, `maplibre-gl.css` | BSD-3-Clause | Volltext inkl. enthaltener Fremdteile: `site/vendor/MAPLIBRE-LICENSE.txt` |
 | darin enthalten: Mapbox GL JS (bis v1.13), glfx.js (© 2011 Evan Wallace), d3-color (© 2010–2016 Mike Bostock) u. a. | in MapLibre eingebunden | BSD-3-Clause, MIT, ISC (siehe `MAPLIBRE-LICENSE.txt`) | |
-| Schrift Marcellus, © 2012 Brian J. Bonislawsky DBA Astigmatic (AOETI) | `site/fonts/marcellus-exse-regen.woff2` (Teilmenge „ExSE Regen“) | SIL Open Font License 1.1 | Lizenztext: `site/fonts/OFL.txt`; veränderte Fassung unter eigenem Namen „ExSE Regen Subset“ (siehe `site/fonts/LIESMICH.txt`) |
+| Schrift Marcellus, © 2012 Brian J. Bonislawsky DBA Astigmatic (AOETI) | `site/fonts/explorationse-regen.woff2` (Teilmenge „ExplorationSE Regen“) | SIL Open Font License 1.1 | Lizenztext: `site/fonts/OFL.txt`; veränderte Fassung unter eigenem Namen „ExplorationSE Regen Subset“ (siehe `site/fonts/LIESMICH.txt`) |
 
 ## Karten- und Wetterdaten (nicht von der MIT-Lizenz erfasst)
 

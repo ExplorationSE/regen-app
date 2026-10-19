@@ -1,6 +1,6 @@
 // Test in Headless-Chromium: 412x915 (bzw. Argumente), Standort Berlin simuliert
 const { chromium } = require('/workspace/shot/node_modules/playwright');
-const [W, H, out, lat, lon] = [+(process.argv[2] || 412), +(process.argv[3] || 915), process.argv[4] || '/workspace/exse-regen/screenshot.png', +(process.argv[5] || 52.52), +(process.argv[6] || 13.405)];
+const [W, H, out, lat, lon] = [+(process.argv[2] || 412), +(process.argv[3] || 915), process.argv[4] || __dirname + '/../screenshot.png', +(process.argv[5] || 52.52), +(process.argv[6] || 13.405)];
 (async () => {
   const b = await chromium.launch({ args: ['--enable-unsafe-swiftshader', '--use-angle=swiftshader', '--ignore-gpu-blocklist'] });
   const ctx = await b.newContext({ viewport: { width: W, height: H }, deviceScaleFactor: 2, isMobile: true, hasTouch: true, locale: 'de-DE', timezoneId: 'Europe/Berlin', ...(process.argv[7] === 'deny' ? {} : { geolocation: { latitude: lat, longitude: lon }, permissions: ['geolocation'] }) });

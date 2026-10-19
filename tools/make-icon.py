@@ -1,5 +1,5 @@
-# Erzeugt site/icon.svg für „ExSE Regen“ (Text als Pfade, keine Schriftabhängigkeit)
-# Stil wie „ExSE Aktien“: Schwarz, „ExSE“ in Marcellus weiß, darunter preußischblaues Radar-Motiv
+# Erzeugt site/icon.svg für „ExplorationSE Regen“ (Text als Pfade, keine Schriftabhängigkeit)
+# Stil wie „ExplorationSE Aktien“: Schwarz, „S.E.“ in Marcellus weiß, darunter preußischblaues Radar-Motiv
 from fontTools.ttLib import TTFont
 from fontTools.pens.svgPathPen import SVGPathPen
 from fontTools.pens.transformPen import TransformPen
@@ -13,7 +13,7 @@ def text_path(txt, size, cx, baseline, track=0):
     for n in names:
         gs[n].draw(TransformPen(pen, (s, 0, 0, -s, x, baseline))); x += gs[n].width * s + track
     return pen.getCommands(), w
-TXT, w = text_path('ExSE', 128, 256, 226, track=6)
+TXT, w = text_path('S.E.', 144, 256, 226, track=14)
 CX, CY, R = 256, 338, 74          # Radarschirm unter dem Schriftzug
 def pt(a, r): return (round(CX + r * math.cos(math.radians(a)), 1), round(CY - r * math.sin(math.radians(a)), 1))
 # Radar-Sweep: Keil von 20° bis 75° (oben rechts), läuft gegen den Uhrzeigersinn aus

@@ -1,7 +1,15 @@
 # Änderungen
 
-## Unveröffentlicht (nur Dokumentation)
-- MIT-Lizenz (`LICENSE`), Hinweise zu Fremdbestandteilen (`THIRD-PARTY-NOTICES.md`) und Abschnitt „Lizenz“ im README. Die App selbst ist unverändert.
+## Version 0.3 (19.10.2026)
+- Umbenennung: Die App heißt jetzt **„ExplorationSE Regen“** statt „ExSE Regen“ (Verwechslungsgefahr mit einer gleichnamigen Softwarefirma); die Bezeichnung „ExSE“ wurde aus App, Dokumentation, Code-Kommentaren und Hilfsskripten entfernt. Ältere Einträge in diesem Änderungsprotokoll behalten den damaligen Namen.
+- Manifest: Name „ExplorationSE Regen“, Kurzname unter dem Symbol auf dem Startbildschirm „SE Regen“. Seitentitel, `application-name` und `apple-mobile-web-app-title` „ExplorationSE Regen“.
+- **Unverändert:** Adresse https://explorationse.github.io/exse-regen/, Manifest-`id`, `start_url` und `scope` (`/exse-regen/`) sowie der Repository-Name – die installierte App bleibt dieselbe, der gespeicherte Standort bleibt erhalten.
+- App-Symbol: Schriftzug „S.E.“ statt „ExSE“ (Marcellus, weiß), darunter wie bisher das preußischblaue Radar-Motiv. Alle Größen neu erzeugt (48–512 px, maskable, Apple-Touch-Icon, Favicons) unter neuen Dateinamen (`icons/*-v3-*`, Favicons jetzt `icons/favicon-v3-16.png`/`-32.png`), damit Browser und Android sie frisch laden.
+- Fußzeile: „ExplorationSE Regen · Quelle: Deutscher Wetterdienst · Version 0.3“, ab 360 px weiterhin einzeilig.
+- Schrift-Teilmenge neu erzeugt (nur die Zeichen „ExplorationSE Regen“) als `site/fonts/explorationse-regen.woff2`, eigener Schriftname „ExplorationSE Regen Subset“ (SIL OFL 1.1, reservierter Name „Marcellus“ nicht verwendet); die alte Datei `marcellus-exse-regen.woff2` entfällt.
+- **Hinweis:** Damit Name und Symbol auf dem Startbildschirm wechseln, muss die App unter Umständen einmal entfernt und neu installiert werden (Chrome: ⋮ → „App installieren“).
+- SW-Cache regen-v5.
+- Außerdem seit 0.2.1 (nur Dokumentation): MIT-Lizenz (`LICENSE`), Hinweise zu Fremdbestandteilen (`THIRD-PARTY-NOTICES.md`) und Abschnitt „Lizenz“ im README.
 
 ## Version 0.2.1 (10.10.2026)
 - Fehlerbehebung Installation auf Android: Manifest-`id` war „./“ und wurde von Chrome zu `https://explorationse.github.io/` (Ursprung) aufgelöst – keine eindeutige App-Kennung neben „ExSE Aktien“ auf demselben Ursprung. Jetzt `id`, `start_url` und `scope` = `/exse-regen/` (wie bei ExSE Aktien `/aktien-app/`).
