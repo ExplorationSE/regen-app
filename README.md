@@ -1,7 +1,7 @@
 # ExplorationSE Regen
 
-**Aktuelle Version:** 0.3 (19.10.2026) – siehe [CHANGELOG.md](CHANGELOG.md)  
-**Live:** https://explorationse.github.io/exse-regen/
+**Aktuelle Version:** 0.3.1 (19.10.2026) – siehe [CHANGELOG.md](CHANGELOG.md)  
+**Live:** https://explorationse.github.io/regen-app/
 
 Regenradar als Web-App (PWA) für das Android-Handy (Chrome): aktuelle Regenkarte, zentriert auf den eigenen Standort, mit Animation der letzten 2 Stunden und Vorhersage für die nächsten 2 Stunden.
 
@@ -14,7 +14,7 @@ Regenradar als Web-App (PWA) für das Android-Handy (Chrome): aktuelle Regenkart
 - Legende in mm/h (Farbstufen des DWD)
 - Außerhalb des DWD-Gebiets oder bei DWD-Ausfall: RainViewer (nur Vergangenheit, ohne Vorhersage)
 - Seite scrollt nicht (getestet 360×800 und 412×915)
-- Fußzeile „ExplorationSE Regen · Quelle: Deutscher Wetterdienst · Version …“, Name in der Schrift Marcellus wie im App-Symbol „S.E.“, ab 360 px einzeilig
+- Fußzeile „ExplorationSE Regen · Quelle: Deutscher Wetterdienst · v…“ (Versionsnummer kurz „v“ wie bei ExplorationSE Aktien), Name in der Schrift Marcellus wie im App-Symbol „S.E.“, ab 360 px einzeilig
 
 ## Datenquellen und Lizenzen
 | Quelle | Verwendung | Bedingungen |
@@ -53,12 +53,14 @@ node tools/shot.js 412 915 screenshot.png 52.52 13.405 more
 ```
 
 ## Installation auf dem Handy
-In Chrome https://explorationse.github.io/exse-regen/ öffnen, Standort erlauben, dann Menü ⋮ → „Zum Startbildschirm hinzufügen“ bzw. „App installieren“. Auf dem Startbildschirm heißt die App „SE Regen“ (voller Name „ExplorationSE Regen“ in der App-Übersicht).
+In Chrome https://explorationse.github.io/regen-app/ öffnen, Standort erlauben, dann Menü ⋮ → „Zum Startbildschirm hinzufügen“ bzw. „App installieren“. Auf dem Startbildschirm heißt die App „SE Regen“ (voller Name „ExplorationSE Regen“ in der App-Übersicht).
 
-**Hinweis zu Version 0.3:** Mit 0.3 haben sich Name („ExplorationSE Regen“ statt „ExSE Regen“) und Symbol („S.E.“) geändert. Zeigt der Startbildschirm noch den alten Namen oder das alte Symbol, die App entfernen und über Chrome neu installieren. Adresse und gespeicherter Standort bleiben erhalten.
+**Hinweis zu Version 0.3:** Mit 0.3 haben sich Name („ExplorationSE Regen“ statt „ExSE Regen“) und Symbol („S.E.“) geändert. Zeigt der Startbildschirm noch den alten Namen oder das alte Symbol, die App entfernen und über Chrome neu installieren.
+
+**Hinweis zu Version 0.3.1 – neue Adresse:** Seit 0.3.1 liegt die App unter https://explorationse.github.io/regen-app/ (Repository `ExplorationSE/regen-app`, vorher `exse-regen`). Die alte Adresse https://explorationse.github.io/exse-regen/ funktioniert nicht mehr. Eine unter der alten Adresse installierte App bitte entfernen und von der neuen Adresse neu installieren. Gespeicherter Standort und Standortfreigabe bleiben erhalten, weil beide Adressen auf demselben Ursprung `explorationse.github.io` liegen.
 
 ## Veröffentlichung
 GitHub Pages über den Workflow `.github/workflows/pages.yml` (veröffentlicht den Ordner `site/` bei jedem Push auf `main`).
 
 ## Hinweis zur Installation (Manifest)
-`id`, `start_url` und `scope` sind absolut auf `/exse-regen/` gesetzt. Beide Apps (ExplorationSE Aktien und ExplorationSE Regen) liegen auf demselben Ursprung `explorationse.github.io`; eine relative `id` („./“) wird laut Spezifikation relativ zum Ursprung aufgelöst und ergab `https://explorationse.github.io/` – das ist keine eindeutige App-Kennung und hat in Version 0.1/0.2 die Installation auf Android verhindert.
+`id`, `start_url` und `scope` sind absolut auf `/regen-app/` gesetzt (bis 0.3: `/exse-regen/`). Beide Apps (ExplorationSE Aktien und ExplorationSE Regen) liegen auf demselben Ursprung `explorationse.github.io`; eine relative `id` („./“) wird laut Spezifikation relativ zum Ursprung aufgelöst und ergab `https://explorationse.github.io/` – das ist keine eindeutige App-Kennung und hat in Version 0.1/0.2 die Installation auf Android verhindert.

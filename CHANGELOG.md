@@ -1,5 +1,13 @@
 # Änderungen
 
+## Version 0.3.1 (19.10.2026)
+- **Neue Adresse:** Das Repository heißt jetzt `ExplorationSE/regen-app` (vorher `exse-regen`), damit auch die Adresse kein „ExSE“ mehr enthält. Die App liegt jetzt unter **https://explorationse.github.io/regen-app/**.
+- **Die alte Adresse https://explorationse.github.io/exse-regen/ funktioniert nicht mehr** (GitHub Pages leitet nicht weiter, sie liefert „404“). Die unter der alten Adresse installierte App bitte vom Handy entfernen und in Chrome von der neuen Adresse neu installieren (⋮ → „App installieren“). Gespeicherter Standort und Standortfreigabe bleiben erhalten (gleicher Ursprung `explorationse.github.io`).
+- Manifest-`id`, `start_url` und `scope` jetzt `/regen-app/` – dadurch ist es für Android eine neue App.
+- Dokumentation (README, Änderungsprotokoll) und Homepage-Angabe des Repositorys auf die neue Adresse umgestellt.
+- Fußzeile „ExplorationSE Regen · Quelle: Deutscher Wetterdienst · v0.3.1“ – „Version“ zu „v“ gekürzt (wie bei ExplorationSE Aktien), damit die Zeile mit der längeren Versionsnummer bei 360 px einzeilig bleibt.
+- SW-Cache regen-v6.
+
 ## Version 0.3 (19.10.2026)
 - Umbenennung: Die App heißt jetzt **„ExplorationSE Regen“** statt „ExSE Regen“ (Verwechslungsgefahr mit einer gleichnamigen Softwarefirma); die Bezeichnung „ExSE“ wurde aus App, Dokumentation, Code-Kommentaren und Hilfsskripten entfernt. Ältere Einträge in diesem Änderungsprotokoll behalten den damaligen Namen.
 - Manifest: Name „ExplorationSE Regen“, Kurzname unter dem Symbol auf dem Startbildschirm „SE Regen“. Seitentitel, `application-name` und `apple-mobile-web-app-title` „ExplorationSE Regen“.
