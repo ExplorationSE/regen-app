@@ -1,5 +1,11 @@
 # Änderungen
 
+## Version 0.3.2 (22.10.2026)
+- **Fußzeile:** „SE Regen © Stefan Eilers · Quelle: Deutscher Wetterdienst · v0.3.2“ statt „ExplorationSE Regen · …“. Nur „SE Regen“ steht in der Schrift Marcellus, „© Stefan Eilers“ in der normalen Schrift; Tooltip „ExplorationSE Regen – © Stefan Eilers, MIT-Lizenz“. Ab 360 px einzeilig (geprüft 360, 384, 412 px), bei 320 px Umbruch nur zwischen den Abschnitten. Die Schrift-Teilmenge enthält bereits alle Zeichen und bleibt unverändert.
+- **Unverändert:** Manifest-Name, Seitentitel und `application-name` „ExplorationSE Regen“, Kurzname „SE Regen“, Adresse https://explorationse.github.io/regen-app/.
+- README und Hinweise zu Fremdbestandteilen: Urheber Stefan Eilers und Kurzname „SE Regen“ ergänzt.
+- SW-Cache regen-v7.
+
 ## Version 0.3.1 (19.10.2026)
 - **Neue Adresse:** Das Repository heißt jetzt `ExplorationSE/regen-app` (vorher `exse-regen`), damit auch die Adresse kein „ExSE“ mehr enthält. Die App liegt jetzt unter **https://explorationse.github.io/regen-app/**.
 - **Die alte Adresse https://explorationse.github.io/exse-regen/ funktioniert nicht mehr** (GitHub Pages leitet nicht weiter, sie liefert „404“). Die unter der alten Adresse installierte App bitte vom Handy entfernen und in Chrome von der neuen Adresse neu installieren (⋮ → „App installieren“). Gespeicherter Standort und Standortfreigabe bleiben erhalten (gleicher Ursprung `explorationse.github.io`).

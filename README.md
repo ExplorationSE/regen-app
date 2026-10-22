@@ -1,7 +1,8 @@
 # ExplorationSE Regen
 
-**Aktuelle Version:** 0.3.1 (19.10.2026) – siehe [CHANGELOG.md](CHANGELOG.md)  
-**Live:** https://explorationse.github.io/regen-app/
+**Aktuelle Version:** 0.3.2 (22.10.2026) – siehe [CHANGELOG.md](CHANGELOG.md)  
+**Live:** https://explorationse.github.io/regen-app/  
+**Urheber:** Stefan Eilers (MIT-Lizenz) – in der App und auf dem Startbildschirm kurz **„SE Regen“**
 
 Regenradar als Web-App (PWA) für das Android-Handy (Chrome): aktuelle Regenkarte, zentriert auf den eigenen Standort, mit Animation der letzten 2 Stunden und Vorhersage für die nächsten 2 Stunden.
 
@@ -14,7 +15,7 @@ Regenradar als Web-App (PWA) für das Android-Handy (Chrome): aktuelle Regenkart
 - Legende in mm/h (Farbstufen des DWD)
 - Außerhalb des DWD-Gebiets oder bei DWD-Ausfall: RainViewer (nur Vergangenheit, ohne Vorhersage)
 - Seite scrollt nicht (getestet 360×800 und 412×915)
-- Fußzeile „ExplorationSE Regen · Quelle: Deutscher Wetterdienst · v…“ (Versionsnummer kurz „v“ wie bei ExplorationSE Aktien), Name in der Schrift Marcellus wie im App-Symbol „S.E.“, ab 360 px einzeilig
+- Fußzeile „SE Regen © Stefan Eilers · Quelle: Deutscher Wetterdienst · v0.3.2“ (ab Version 0.3.2; außerhalb Deutschlands „Quelle: RainViewer“). Nur der Name „SE Regen“ steht in der Schrift Marcellus wie im App-Symbol „S.E.“, „© Stefan Eilers“ und der übrige Text in der normalen Schrift. Tooltip auf Name und Urheber: „ExplorationSE Regen – © Stefan Eilers, MIT-Lizenz“. Ab 360 px einzeilig, bei 320 px Umbruch nur zwischen den Abschnitten
 
 ## Datenquellen und Lizenzen
 | Quelle | Verwendung | Bedingungen |
@@ -23,13 +24,13 @@ Regenradar als Web-App (PWA) für das Android-Handy (Chrome): aktuelle Regenkart
 | OpenFreeMap „Dark“ (`tiles.openfreemap.org`) | Grundkarte (Vektorkacheln) | frei, ohne Schlüssel; Nennung „OpenFreeMap © OpenMapTiles Data from OpenStreetMap“ (unten rechts auf der Karte) |
 | RainViewer (`api.rainviewer.com/public/weather-maps.json`) | Ausweichquelle außerhalb Deutschlands | nur private/Bildungsnutzung, max. Zoom 7, 100 Anfragen/min je IP, keine Vorhersage (seit 01.01.2026); Nennung mit Link |
 | MapLibre GL JS 6.13.0 | Kartendarstellung | BSD-3-Clause, `site/vendor/MAPLIBRE-LICENSE.txt` |
-| Marcellus (Teilmenge „ExplorationSE Regen“) | Name in der Fußzeile | SIL OFL 1.1, `site/fonts/` |
+| Marcellus (Teilmenge mit den Zeichen von „ExplorationSE Regen“) | Name „SE Regen“ in der Fußzeile | SIL OFL 1.1, `site/fonts/` |
 
 Hinweis: Die früher übliche CARTO-Grundkarte (`basemaps.cartocdn.com`) liefert seit 25.09.2026 ohne API-Schlüssel nur noch den Hinweis „API KEY REQUIRED“ und wird deshalb nicht verwendet.
 
 ## Lizenz
 
-- **Eigener Code:** MIT-Lizenz, © 2026 Stefan Eilers – siehe [LICENSE](LICENSE).
+- **Eigener Code:** MIT-Lizenz, © 2026 Stefan Eilers (Urheber) – siehe [LICENSE](LICENSE). Die Fußzeile der App nennt den Urheber („SE Regen © Stefan Eilers“).
 - **Fremdbestandteile** (MapLibre GL JS, BSD-3-Clause; Schrift Marcellus, SIL OFL 1.1): siehe [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
 - **Daten** von Deutschem Wetterdienst, RainViewer, OpenFreeMap/OpenMapTiles und OpenStreetMap (ODbL) fallen **nicht** unter die MIT-Lizenz und unterliegen weiterhin den Bedingungen der jeweiligen Anbieter.
 
