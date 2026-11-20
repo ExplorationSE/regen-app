@@ -1,5 +1,5 @@
-# Erzeugt site/icon.svg für „ExplorationSE Regen“ (Text als Pfade, keine Schriftabhängigkeit)
-# Stil wie „ExplorationSE Aktien“: Schwarz, „S.E.“ in Marcellus weiß, darunter preußischblaues Radar-Motiv
+# Erzeugt site/icon.svg für „SE Regen“ (Text als Pfade, keine Schriftabhängigkeit)
+# Stil wie „SE Aktien“: Schwarz, „S.E.“ in Marcellus weiß, darunter preußischblaues Radar-Motiv
 from fontTools.ttLib import TTFont
 from fontTools.pens.svgPathPen import SVGPathPen
 from fontTools.pens.transformPen import TransformPen

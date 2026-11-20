@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="de"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0d1117"><title>ExplorationSE Regen</title>
+<meta name="theme-color" content="#0d1117"><title>SE Regen</title>
 <link rel="preload" href="./fonts/explorationse-regen.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="512x512" href="./icons/icon-v3-512.png"><link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-v3-192.png"><link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-v3-32.png"><link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon-v3.png">
-<meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="application-name" content="ExplorationSE Regen"><meta name="apple-mobile-web-app-title" content="ExplorationSE Regen">
+<meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="application-name" content="SE Regen"><meta name="apple-mobile-web-app-title" content="SE Regen">
 <link rel="stylesheet" href="./vendor/maplibre-gl.css"><link rel="modulepreload" href="./vendor/maplibre-gl.mjs">
 <style>
 :root{--bg:#0d1117;--card:#161b22;--line:#30363d;--txt:#e6edf3;--mut:#8b949e;--acc:#58a6ff;--pb:#003153;--pb2:#1f5f8b;--pb3:#3a82b5}
@@ -58,6 +58,7 @@ footer{font-size:10px;color:#6e7681;text-align:center;padding:4px 10px 6px;line-
 footer span{white-space:nowrap}
 footer a{color:inherit;text-decoration:none}
 footer .brand{font-family:'ExplorationSE Regen',serif;font-size:12px;color:#8b949e;letter-spacing:.3px}
+footer .indep{margin:3px 8px 0;font-size:9px;line-height:1.25;color:#6e7681;white-space:normal}
 </style></head><body>
 <div class="top">
   <div class="row1"><span id="frameTime">–</span><span id="frameKind"></span></div>
@@ -73,7 +74,7 @@ footer .brand{font-family:'ExplorationSE Regen',serif;font-size:12px;color:#8b94
   <div class="legend" id="legend"></div>
   <button id="nowBtn" title="Zum aktuellen Radarbild">Jetzt</button>
 </div>
-<footer><span title="ExplorationSE Regen – © Stefan Eilers, MIT-Lizenz"><span class="brand">SE Regen</span> © Stefan Eilers</span> · <span id="src">Quelle: <a href="https://www.dwd.de" target="_blank" rel="noopener">Deutscher Wetterdienst</a></span> · <span title="Version 0.3.2">v0.3.2</span></footer>
+<footer><div class="legal"><span title="SE Regen – © Stefan Eilers, MIT-Lizenz"><span class="brand">SE Regen</span> © Stefan Eilers</span> · <span id="src">Quelle: <a href="https://www.dwd.de" target="_blank" rel="noopener">Deutscher Wetterdienst</a></span> · <span title="Version 0.3.2">v0.3.2</span></div><p class="indep">Unabhängiges Projekt, weder mit den genannten Datenquellen verbunden noch von ihnen unterstützt. Genannte Namen sind Marken ihrer Inhaber.</p></footer>
 <script type="module" src="./app.js"></script>
 <script>if('serviceWorker' in navigator)navigator.serviceWorker.register('./sw.js',{scope:'./'});</script>
 </body></html>

@@ -1,10 +1,12 @@
-# ExplorationSE Regen
+# SE Regen
 
 **Aktuelle Version:** 0.3.2 (22.10.2026) – siehe [CHANGELOG.md](CHANGELOG.md)  
 **Live:** https://explorationse.github.io/regen-app/  
 **Urheber:** Stefan Eilers (MIT-Lizenz) – in der App und auf dem Startbildschirm kurz **„SE Regen“**
 
 Regenradar als Web-App (PWA) für das Android-Handy (Chrome): aktuelle Regenkarte, zentriert auf den eigenen Standort, mit Animation der letzten 2 Stunden und Vorhersage für die nächsten 2 Stunden.
+
+Unabhängiges Projekt, weder mit den genannten Datenquellen verbunden noch von ihnen unterstützt. Genannte Namen sind Marken ihrer Inhaber.
 
 ## Funktionen
 - Regenkarte des **Deutschen Wetterdienstes** (WMS-Layer `dwd:Niederschlagsradar`, RV-Produkt, 1 km, alle 5 Minuten), Bildabstand 5 Minuten von −2 h bis +2 h (49 Bilder, nächstliegende zuerst geladen, bereits geladene Bilder werden bei der Aktualisierung wiederverwendet)
@@ -15,7 +17,7 @@ Regenradar als Web-App (PWA) für das Android-Handy (Chrome): aktuelle Regenkart
 - Legende in mm/h (Farbstufen des DWD)
 - Außerhalb des DWD-Gebiets oder bei DWD-Ausfall: RainViewer (nur Vergangenheit, ohne Vorhersage)
 - Seite scrollt nicht (getestet 360×800 und 412×915)
-- Fußzeile „SE Regen © Stefan Eilers · Quelle: Deutscher Wetterdienst · v0.3.2“ (ab Version 0.3.2; außerhalb Deutschlands „Quelle: RainViewer“). Nur der Name „SE Regen“ steht in der Schrift Marcellus wie im App-Symbol „S.E.“, „© Stefan Eilers“ und der übrige Text in der normalen Schrift. Tooltip auf Name und Urheber: „ExplorationSE Regen – © Stefan Eilers, MIT-Lizenz“. Ab 360 px einzeilig, bei 320 px Umbruch nur zwischen den Abschnitten
+- Fußzeile „SE Regen © Stefan Eilers · Quelle: Deutscher Wetterdienst · v0.3.2“ (ab Version 0.3.2; außerhalb Deutschlands „Quelle: RainViewer“). Nur der Name „SE Regen“ steht in der Schrift Marcellus wie im App-Symbol „S.E.“, „© Stefan Eilers“ und der übrige Text in der normalen Schrift. Tooltip auf Name und Urheber: „SE Regen – © Stefan Eilers, MIT-Lizenz“. Ab 360 px einzeilig, bei 320 px Umbruch nur zwischen den Abschnitten
 
 ## Datenquellen und Lizenzen
 | Quelle | Verwendung | Bedingungen |
@@ -54,7 +56,7 @@ node tools/shot.js 412 915 screenshot.png 52.52 13.405 more
 ```
 
 ## Installation auf dem Handy
-In Chrome https://explorationse.github.io/regen-app/ öffnen, Standort erlauben, dann Menü ⋮ → „Zum Startbildschirm hinzufügen“ bzw. „App installieren“. Auf dem Startbildschirm heißt die App „SE Regen“ (voller Name „ExplorationSE Regen“ in der App-Übersicht).
+In Chrome https://explorationse.github.io/regen-app/ öffnen, Standort erlauben, dann Menü ⋮ → „Zum Startbildschirm hinzufügen“ bzw. „App installieren“. Auf dem Startbildschirm und in der App-Übersicht heißt die App „SE Regen“.
 
 **Hinweis zu Version 0.3:** Mit 0.3 haben sich Name („ExplorationSE Regen“ statt „ExSE Regen“) und Symbol („S.E.“) geändert. Zeigt der Startbildschirm noch den alten Namen oder das alte Symbol, die App entfernen und über Chrome neu installieren.
 
@@ -64,4 +66,4 @@ In Chrome https://explorationse.github.io/regen-app/ öffnen, Standort erlauben,
 GitHub Pages über den Workflow `.github/workflows/pages.yml` (veröffentlicht den Ordner `site/` bei jedem Push auf `main`).
 
 ## Hinweis zur Installation (Manifest)
-`id`, `start_url` und `scope` sind absolut auf `/regen-app/` gesetzt (bis 0.3: `/exse-regen/`). Beide Apps (ExplorationSE Aktien und ExplorationSE Regen) liegen auf demselben Ursprung `explorationse.github.io`; eine relative `id` („./“) wird laut Spezifikation relativ zum Ursprung aufgelöst und ergab `https://explorationse.github.io/` – das ist keine eindeutige App-Kennung und hat in Version 0.1/0.2 die Installation auf Android verhindert.
+`id`, `start_url` und `scope` sind absolut auf `/regen-app/` gesetzt (bis 0.3: `/exse-regen/`). Beide Apps (SE Aktien und SE Regen) liegen auf demselben Ursprung `explorationse.github.io`; eine relative `id` („./“) wird laut Spezifikation relativ zum Ursprung aufgelöst und ergab `https://explorationse.github.io/` – das ist keine eindeutige App-Kennung und hat in Version 0.1/0.2 die Installation auf Android verhindert.

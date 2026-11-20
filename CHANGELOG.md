@@ -1,5 +1,11 @@
 # Änderungen
 
+## Unveröffentlicht – 20.11.2026
+
+- Name vereinheitlicht: Manifest-Name, Seitentitel und `application-name` jetzt „SE Regen“.
+- Unabhängigkeitshinweis in README und App ergänzt.
+- Service-Worker-Cache `regen-v9`.
+
 ## Version 0.3.2 (22.10.2026)
 - **Fußzeile:** „SE Regen © Stefan Eilers · Quelle: Deutscher Wetterdienst · v0.3.2“ statt „ExplorationSE Regen · …“. Nur „SE Regen“ steht in der Schrift Marcellus, „© Stefan Eilers“ in der normalen Schrift; Tooltip „ExplorationSE Regen – © Stefan Eilers, MIT-Lizenz“. Ab 360 px einzeilig (geprüft 360, 384, 412 px), bei 320 px Umbruch nur zwischen den Abschnitten. Die Schrift-Teilmenge enthält bereits alle Zeichen und bleibt unverändert.
 - **Unverändert:** Manifest-Name, Seitentitel und `application-name` „ExplorationSE Regen“, Kurzname „SE Regen“, Adresse https://explorationse.github.io/regen-app/.

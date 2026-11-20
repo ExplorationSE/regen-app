@@ -1,6 +1,6 @@
 {
   "id": "/regen-app/",
-  "name": "ExplorationSE Regen",
+  "name": "SE Regen",
   "short_name": "SE Regen",
   "description": "Regenradar mit Vorhersage, zentriert auf Ihren Standort (Daten: Deutscher Wetterdienst)",
   "lang": "de",

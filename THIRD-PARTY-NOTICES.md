@@ -1,6 +1,6 @@
 # Hinweise zu Fremdbestandteilen
 
-Der eigene Code von ExplorationSE Regen (in der App kurz „SE Regen“), © 2026 Stefan Eilers, steht unter der MIT-Lizenz (siehe [LICENSE](LICENSE)). Die folgenden Bestandteile stammen von Dritten und unterliegen ihren eigenen Lizenzen bzw. Nutzungsbedingungen. Es werden keine Bibliotheken über ein CDN nachgeladen; MapLibre liegt lokal in `site/vendor/`. Kartenstil, Kacheln und Radardaten werden zur Laufzeit von den unten genannten Diensten geladen.
+Der eigene Code von SE Regen, © 2026 Stefan Eilers, steht unter der MIT-Lizenz (siehe [LICENSE](LICENSE)). Die folgenden Bestandteile stammen von Dritten und unterliegen ihren eigenen Lizenzen bzw. Nutzungsbedingungen. Es werden keine Bibliotheken über ein CDN nachgeladen; MapLibre liegt lokal in `site/vendor/`. Kartenstil, Kacheln und Radardaten werden zur Laufzeit von den unten genannten Diensten geladen.
 
 ## Mitgelieferte Software und Schriften
 
