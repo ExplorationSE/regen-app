@@ -1,19 +1,24 @@
 # Erzeugt site/icon.svg für „SE Regen“ (Text als Pfade, keine Schriftabhängigkeit)
-# Stil wie „SE Aktien“: Schwarz, „S.E.“ in Marcellus weiß, darunter preußischblaues Radar-Motiv
+# Stil wie „SE Aktien“: Schwarz, „SE“ in Marcellus weiß, darunter preußischblaues Radar-Motiv
 from fontTools.ttLib import TTFont
 from fontTools.pens.svgPathPen import SVGPathPen
 from fontTools.pens.transformPen import TransformPen
+from fontTools.pens.boundsPen import BoundsPen
 import math, sys
 FONT = '/usr/share/fonts/truetype/sand-box/google/Marcellus/Marcellus-Regular.ttf'
 f = TTFont(FONT); gs = f.getGlyphSet(); cmap = f.getBestCmap(); upm = f['head'].unitsPerEm
 def text_path(txt, size, cx, baseline, track=0):
+    """Text als SVG-Pfad; waagerecht nach der tatsächlichen Glyphen-Umrandung zentriert (nicht nach Vorschubbreiten)."""
     s = size / upm; names = [cmap[ord(c)] for c in txt]
-    w = sum(gs[n].width for n in names) * s + track * (len(txt) - 1)
-    x = cx - w / 2; pen = SVGPathPen(gs)
-    for n in names:
-        gs[n].draw(TransformPen(pen, (s, 0, 0, -s, x, baseline))); x += gs[n].width * s + track
-    return pen.getCommands(), w
-TXT, w = text_path('S.E.', 144, 256, 226, track=14)
+    def draw(pen, x0):
+        x = x0
+        for n in names:
+            gs[n].draw(TransformPen(pen, (s, 0, 0, -s, x, baseline))); x += gs[n].width * s + track
+    bp = BoundsPen(gs); draw(bp, 0); x0, y0, x1, y1 = bp.bounds
+    pen = SVGPathPen(gs); draw(pen, cx - (x0 + x1) / 2)
+    return pen.getCommands(), (y0, y1)
+# Größe, Laufweite und Zentrierung wie bei SE Mahlzeit; Grundlinie 8 px höher, damit der Strich bei y=248 zum Radar passt
+TXT, (ty0, ty1) = text_path('SE', 178, 256, 228, track=22)
 CX, CY, R = 256, 338, 74          # Radarschirm unter dem Schriftzug
 def pt(a, r): return (round(CX + r * math.cos(math.radians(a)), 1), round(CY - r * math.sin(math.radians(a)), 1))
 # Radar-Sweep: Keil von 20° bis 75° (oben rechts), läuft gegen den Uhrzeigersinn aus
@@ -27,7 +32,7 @@ cell_svg = ''.join(f'<ellipse cx="{CX+dx}" cy="{CY+dy}" rx="{rx}" ry="{ry}" tran
 svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
 <defs>
   <radialGradient id="glow" cx="50%" cy="58%" r="55%"><stop offset="0" stop-color="#001a2c" stop-opacity=".9"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
-  <linearGradient id="tx" x1="0" y1="130" x2="0" y2="230" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#c9d3dc"/></linearGradient>
+  <linearGradient id="tx" x1="0" y1="100" x2="0" y2="232" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#c9d3dc"/></linearGradient>
   <linearGradient id="rule" x1="150" y1="0" x2="362" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1f5f8b" stop-opacity="0"/><stop offset=".5" stop-color="#2a6f9f"/><stop offset="1" stop-color="#1f5f8b" stop-opacity="0"/></linearGradient>
   <radialGradient id="scope" cx="{CX}" cy="{CY}" r="{R}" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#003153" stop-opacity=".45"/><stop offset="1" stop-color="#003153" stop-opacity=".08"/></radialGradient>
   <linearGradient id="sweep" x1="{p1[0]}" y1="{p1[1]}" x2="{p0[0]}" y2="{p0[1]}" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2a6f9f" stop-opacity="0"/><stop offset="1" stop-color="#2a6f9f" stop-opacity=".55"/></linearGradient>
@@ -52,5 +57,5 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="5
 <circle cx="{CX}" cy="{CY}" r="5" fill="#3a82b5"/>
 <circle cx="{CX}" cy="{CY}" r="2" fill="#e8f1f8"/>
 </svg>'''
-open(sys.argv[1] if len(sys.argv) > 1 else '../site/icon.svg', 'w').write(svg)
-print('text width', round(w))
+open(sys.argv[1] if len(sys.argv) > 1 else __file__.replace('tools/make-icon.py', 'site/icon.svg'), 'w').write(svg)
+print(f'Schrift: oben {ty0:.1f}, unten {ty1:.1f}')

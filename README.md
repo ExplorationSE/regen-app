@@ -17,7 +17,7 @@ Unabhängiges Projekt, weder mit den genannten Datenquellen verbunden noch von i
 - Legende in mm/h (Farbstufen des DWD)
 - Außerhalb des DWD-Gebiets oder bei DWD-Ausfall: RainViewer (nur Vergangenheit, ohne Vorhersage)
 - Seite scrollt nicht (getestet 360×800 und 412×915)
-- Fußzeile „SE Regen © Stefan Eilers · Quelle: Deutscher Wetterdienst · v0.3.2“ (ab Version 0.3.2; außerhalb Deutschlands „Quelle: RainViewer“). Nur der Name „SE Regen“ steht in der Schrift Marcellus wie im App-Symbol „S.E.“, „© Stefan Eilers“ und der übrige Text in der normalen Schrift. Tooltip auf Name und Urheber: „SE Regen – © Stefan Eilers, MIT-Lizenz“. Ab 360 px einzeilig, bei 320 px Umbruch nur zwischen den Abschnitten
+- Fußzeile „SE Regen © Stefan Eilers · Quelle: Deutscher Wetterdienst · v0.3.2“ (ab Version 0.3.2; außerhalb Deutschlands „Quelle: RainViewer“). Nur der Name „SE Regen“ steht in der Schrift Marcellus wie im App-Symbol „SE“, „© Stefan Eilers“ und der übrige Text in der normalen Schrift. Tooltip auf Name und Urheber: „SE Regen – © Stefan Eilers, MIT-Lizenz“. Ab 360 px einzeilig, bei 320 px Umbruch nur zwischen den Abschnitten
 
 ## Datenquellen und Lizenzen
 | Quelle | Verwendung | Bedingungen |
@@ -40,11 +40,11 @@ Hinweis: Die früher übliche CARTO-Grundkarte (`basemaps.cartocdn.com`) liefert
 ```
 site/            # statische Web-App (wird auf GitHub Pages veröffentlicht)
   index.html, app.js, sw.js, manifest.webmanifest
-  icons/         # PNG-Symbole (Dateinamen -v3-) 48–512 px, separate maskable-Symbole, Apple-Touch-Icon, Favicons
+  icons/         # PNG-Symbole (Dateinamen -v4-) 48–512 px, separate maskable-Symbole, Apple-Touch-Icon, Favicons
   fonts/         # Marcellus-Teilmenge (OFL)
   vendor/        # MapLibre GL JS (selbst gehostet)
 tools/
-  make-icon.py   # erzeugt site/icon.svg (Schriftzug „S.E.“ als Pfade)
+  make-icon.py   # erzeugt site/icon.svg (Schriftzug „SE“ als Pfade)
   render-icons.js# rendert die PNG-Symbole und icon-preview.png
   shot.js        # Test in Headless-Chromium mit simuliertem Standort
 ```
@@ -57,6 +57,8 @@ node tools/shot.js 412 915 screenshot.png 52.52 13.405 more
 
 ## Installation auf dem Handy
 In Chrome https://explorationse.github.io/regen-app/ öffnen, Standort erlauben, dann Menü ⋮ → „Zum Startbildschirm hinzufügen“ bzw. „App installieren“. Auf dem Startbildschirm und in der App-Übersicht heißt die App „SE Regen“.
+
+**Hinweis zum App-Symbol:** Das Symbol zeigt jetzt den Schriftzug „SE“ (statt „S.E.“, wie bei SE Mahlzeit). Zeigt der Startbildschirm noch das alte Symbol, die App entfernen und über Chrome neu installieren.
 
 **Hinweis zu Version 0.3:** Mit 0.3 haben sich Name („ExplorationSE Regen“ statt „ExSE Regen“) und Symbol („S.E.“) geändert. Zeigt der Startbildschirm noch den alten Namen oder das alte Symbol, die App entfernen und über Chrome neu installieren.
 

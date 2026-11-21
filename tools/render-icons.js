@@ -1,10 +1,10 @@
 // Rendert site/icon.svg als PNG-Symbole (Android/Chrome: nur PNG, separate maskable-Dateien) und eine Vorschau
 // Aufruf: node tools/render-icons.js [Vorschau.png]   (benötigt Playwright, Pfad ggf. anpassen)
 const { chromium } = require('/workspace/shot/node_modules/playwright'); const fs = require('fs');
-const V = 'v3', S = __dirname + '/../site/', D = S + 'icons/', PREVIEW = process.argv[2] || __dirname + '/../icon-preview.png';
+const V = 'v4', S = __dirname + '/../site/', D = S + 'icons/', PREVIEW = process.argv[2] || __dirname + '/../icon-preview.png';
 const u = 'data:image/svg+xml;base64,' + fs.readFileSync(S + 'icon.svg').toString('base64');
 (async () => {
-  const b = await chromium.launch(); const p = await b.newPage();
+  const b = await chromium.launch({ executablePath: process.env.CHROME || '/usr/bin/google-chrome' }); const p = await b.newPage();
   const render = async (size, scale, path) => {
     await p.setViewportSize({ width: size, height: size });
     const inner = Math.round(size * scale), off = Math.round((size - inner) / 2);

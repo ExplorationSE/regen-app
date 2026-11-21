@@ -1,6 +1,13 @@
 # Änderungen
 
+## Unveröffentlicht – 21.11.2026
+
+- App-Symbol: Schriftzug „SE“ statt „S.E.“ (Marcellus, weiß, Größe und Laufweite wie bei SE Mahlzeit), darunter unverändert das preußischblaue Radar-Motiv. Alle Größen neu erzeugt (48–512 px, maskable, Apple-Touch-Icon, Favicons) unter neuen Dateinamen (`icons/*-v4-*`), damit Browser und Android sie frisch laden.
+- Service-Worker-Cache `regen-v10`.
+- **Hinweis:** Damit das neue Symbol auf dem Startbildschirm erscheint, muss die App unter Umständen einmal entfernt und neu installiert werden (Chrome: ⋮ → „App installieren“).
+
 ## Unveröffentlicht – 20.11.2026
+
 
 - Name vereinheitlicht: Manifest-Name, Seitentitel und `application-name` jetzt „SE Regen“.
 - Unabhängigkeitshinweis in README und App ergänzt.
